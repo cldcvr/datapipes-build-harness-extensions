@@ -1,5 +1,5 @@
 export SHELL = /bin/bash
-export GITHUB_USER = acm-cicd%40redhat.com
+export GITHUB_USER = datapipes+robot@cldcvr.com
 export GITHUB_TOKEN := $(shell cat /etc/github/token 2> /dev/null )
 
 export BUILD_HARNESS_ORG ?= cloudposse
@@ -18,7 +18,7 @@ export BUILD_HARNESS_EXTENSIONS_PATH ?= /opt/build-harness/build-harness-extensi
 ## Init build-harness
 init::
 	@echo $(shell date)
-	@echo "No initialization needed for build harness in OpenShift CI"
+	@echo "No initialization needed for build harness in Prow CI"
 	@echo "The build harness is included as part of the image builder"
 	@echo "The path for the build harness is /opt/build-harness"
 
@@ -26,4 +26,4 @@ init::
 ## Clean build-harness
 clean::
 	@echo $(shell date)
-	@echo "clean is not supported for the build harness in Openshift CI""
+	@echo "clean is not supported for the build harness in Prow CI""
