@@ -1,0 +1,8 @@
+## Package and Push chart $SOURCE_CHART_FILE to $TARGET_REPO_NAME using cm-push plugin
+helm/chart/build/cm-push:
+	$(call assert-set,HELM_REPO_USERNAME)
+	$(call assert-set,HELM_REPO_PASSWORD)
+	$(call assert-set,SOURCE_CHART_TPL)
+	$(call assert-set,TARGET_REPO_NAME)
+	@$(HELM) cm-push $(SOURCE_CHART_TPL) $(TARGET_REPO_NAME)
+	@echo "Package and Publish package $(SOURCE_CHART_TPL)"
